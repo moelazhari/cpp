@@ -19,17 +19,19 @@ int main(){
     while (true)
     {
         std::cout << "enter a command: ";
-        std::cin >> buffer;
+        std::getline(std::cin, buffer);
         if (std::cin.eof() || buffer == "EXIT" || buffer == "exit")
             break ;
         else if (buffer == "ADD" || buffer == "add")
             phnebook.add();
-        else if (buffer == "SEARCH" || buffer == "search")
-        {
-        }
+        // else if (buffer == "SEARCH" || buffer == "search")
+        // {
+        // }
         else{
             std::cout << "command not found" << std::endl;
         }
+        if (std::cin.eof())
+            break ;
     }
     return (0);
 }

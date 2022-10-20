@@ -21,18 +21,84 @@ PhoneBook::~PhoneBook(){
     return;
 }
 
-int PhoneBook::add(void){
+void    PhoneBook::add(void){
 
     std::string buffer;
-    
-    std::cout <<  "first name: ";
-    std::cin >> buffer;
-    if (buffer.length() < 1){
-       std::cout <<  "Error first name is Empty ";
-       return (1);
+    while (1)
+    {
+        std::cout << "First Name: ";
+        std::getline(std::cin, buffer);
+        if (std::cin.eof())
+            return ;
+        if (buffer.length() > 0){
+            this->contacts[this->indax].setFirstName(buffer);
+            break ;
+        }
+        std::cout << "Please enter a valid name" << std::endl;
     }
-    contacts[indax].set
-    
-    
+    while (1)
+    {
+        std::cout << "Last Name: ";
+        std::getline(std::cin, buffer);
+        if (std::cin.eof())
+            return ;
+        if (buffer.length() > 0){
+            this->contacts[this->indax].setLastName(buffer);
+            break ;
+        }
+        std::cout << "Please enter a valid name" << std::endl;
+    }
+    while (1)
+    {
+        std::cout << "Nickname: ";
+        std::getline(std::cin, buffer);
+        if (std::cin.eof())
+            return ;
+        if (buffer.length() > 0){
+            this->contacts[this->indax].setNickName(buffer);
+            break ;
+        }
+        std::cout << "Please enter a valid name" << std::endl;
+    }
+    while (1)
+    {
+        int         n;
+
+        n = 0;
+        std::cout << "Phone Number: ";
+        std::getline(std::cin, buffer);
+        if (std::cin.eof())
+            return ;
+        for (size_t i = 0; i < buffer.length(); i++)
+        {
+            if (!isdigit(buffer[i]))
+            {
+                n = 1;
+                break ;
+            }
+        }
+        if (buffer.length() > 0 && n == 0){
+            this->contacts[this->indax].setPhoneNumber(buffer);
+            break ;
+        }
+        std::cout << "Please enter a valid name" << std::endl;
+    }
+    while (1)
+    {
+        std::cout << "Darkest Secret: ";
+        std::getline(std::cin, buffer);
+        if (std::cin.eof())
+            return ;
+        if (buffer.length() > 0){
+            this->contacts[this->indax].setDarkestSecret(buffer);
+            break ;
+        }
+        std::cout << "Please enter a valid name" << std::endl;
+    }
+    indax++;
+    if (indax == 8)
+        indax = 0;
+    std::cout <<  "Contact added successfully " << std::endl;
+    return ;    
 }
 

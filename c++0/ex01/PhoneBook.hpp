@@ -22,7 +22,7 @@ class PhoneBook{
     public:
     PhoneBook();
     ~PhoneBook();
-    int add(void);
+    void add(void);
 };
 
 #endif
