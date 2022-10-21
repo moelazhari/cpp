@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:22:23 by mazhari           #+#    #+#             */
-/*   Updated: 2022/10/20 19:13:15 by mazhari          ###   ########.fr       */
+/*   Updated: 2022/10/21 13:23:10 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class PhoneBook{
     PhoneBook();
     ~PhoneBook();
     void add(void);
+    void search(void);
 };
 
 #endif

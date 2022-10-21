@@ -6,7 +6,7 @@
 #    By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 15:32:34 by mazhari           #+#    #+#              #
-#    Updated: 2022/10/20 18:40:40 by mazhari          ###   ########.fr        #
+#    Updated: 2022/10/21 13:21:05 by mazhari          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,20 @@ CC=	c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
 NAME =	phonebook
 
-B_DIR = build
-FILES = main PhoneBook Contact
+INCLUDES= ./includes
+HEDEAR= $(INCLUDES)/Contact.hpp\
+		$(INCLUDES)/PhoneBook.hpp
 
+B_DIR = build
+
+FILES = $(addprefix src/, main Contact PhoneBook)
 OBJS = $(addprefix $(B_DIR)/, $(FILES:=.o))
 
 all: $(NAME)
 
-$(B_DIR)/%.o : %.cpp
+$(B_DIR)/%.o : %.cpp $(HEDEAR)
 	mkdir -p $(@D)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -I$(INCLUDES) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) -o $(NAME) $(OBJS)

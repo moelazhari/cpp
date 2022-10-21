@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:52:40 by mazhari           #+#    #+#             */
-/*   Updated: 2022/10/20 18:21:10 by mazhari          ###   ########.fr       */
+/*   Updated: 2022/10/21 13:21:22 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,12 @@ void	Contact::setPhoneNumber(std::string nbr)
 void	Contact::setDarkestSecret(std::string str)
 {
     this->darkestSecret = str;
+}
+
+void    Contact::printContact(void){
+    std::cout << "First Name: " << this->getFirstName() << std::endl;
+    std::cout << "Last Name: " << this->getLastName() << std::endl;
+    std::cout << "Nick Name: " << this->getNickName() << std::endl;
+    std::cout << "Phone Number: " << this->getPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret: " << this->getDarkestSecret() << std::endl;
 }

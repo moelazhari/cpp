@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:37:42 by mazhari           #+#    #+#             */
-/*   Updated: 2022/10/20 19:05:59 by mazhari          ###   ########.fr       */
+/*   Updated: 2022/10/21 13:21:33 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,10 @@ int main(){
             break ;
         else if (buffer == "ADD" || buffer == "add")
             phnebook.add();
-        // else if (buffer == "SEARCH" || buffer == "search")
-        // {
-        // }
-        else{
+        else if (buffer == "SEARCH" || buffer == "search")
+            phnebook.search();
+        else
             std::cout << "command not found" << std::endl;
-        }
         if (std::cin.eof())
             break ;
     }
