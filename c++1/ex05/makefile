@@ -15,11 +15,11 @@ FLAGS= -Wall -Wextra -Werror -std=c++98
 NAME =	harl
 
 INCLUDES= ./includes
-HEDEAR= $(INCLUDES)/Replace.hpp\
+HEDEAR= $(INCLUDES)/Harl.hpp\
 
 B_DIR = build
 
-FILES = $(addprefix src/, main Replace)
+FILES = $(addprefix src/, main Harl)
 OBJS = $(addprefix $(B_DIR)/, $(FILES:=.o))
 
 all: $(NAME)
