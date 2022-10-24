@@ -1,47 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 11:26:46 by mazhari           #+#    #+#             */
-/*   Updated: 2022/10/23 18:55:54 by mazhari          ###   ########.fr       */
+/*   Created: 2022/10/24 15:38:28 by mazhari           #+#    #+#             */
+/*   Updated: 2022/10/24 18:01:33 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "Replace.hpp"
 
-int	main(int ac, char **av)
-{
-	std::ifstream	file;
+Replace::Replace(std::string filename, std::string s1, std::string s2) : filename(filename), s1(s1), s2(s2){
+    return ;
+}
+
+Replace::~Replace(){
+    return ;
+}
+
+int	Replace::replace(void){
+    std::ifstream	file;
 	std::ofstream	fileReplace;
 	std::string		str;
-	
-	if (ac != 3)
-	{
-		std::cout << "Usage: ./replace [filename] [s1] [s2]" << std::endl;
-		return (1);
-	}
-	file.open(av[1]);
+    size_t		    i = 0;
+
+    file.open(this->filename);
 	if (!file.is_open())
 	{
 		std::cout << "Error: File not found" << std::endl;
 		return (1);
 	}
-	fileReplace.open(std::string(av[1]).append(".replace"));
+	fileReplace.open(std::string(this->filename).append(".replace"));
 	if (!fileReplace.is_open())
 	{
 		std::cout << "Error: File not found" << std::endl;
 		return (1);
 	}
-	while (file.good())
+	if (this->s1 == "")
 	{
-		std::getline(file, str);
-		fileReplace << str << std::endl;
+		fileReplace << str;
+		return (1);
 	}
-	return (0);
+	getline(file, str, '\0');
+	while (str.find(this->s1, i) != std::string::npos)
+	{
+		i = str.find(this->s1, i);
+		str.erase(i , this->s1.length());
+		str.insert(i, this->s2);
+		i += this->s2.length();
+	}
+	fileReplace << str;
+    return (0);
 }
-
