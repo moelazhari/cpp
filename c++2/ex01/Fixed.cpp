@@ -1,9 +1,17 @@
 #include "Fixed.hpp"
 
-const int   Fixed::fracBits = 8;
-
-Fixed::Fixed() : fixedPoint(0){
+Fixed::Fixed(void) : fixedPoint(0){
     std::cout << "Default constructor called" << std::endl;
+    return ;
+}
+
+Fixed::Fixed(const int nbr) : fixedPoint(nbr << fracBits){
+    std::cout << "Int constructor called" << std::endl;
+    return ;
+}
+
+Fixed::Fixed(const float nbr) : fixedPoint((int)roundf(nbr * (1 << fracBits))){
+    std::cout << "Float constructor called" << std::endl;
     return ;
 }
 
@@ -32,4 +40,17 @@ void Fixed::setRawBits(int const raw){
     std::cout << "setRawBits member function called" << std::endl;
     this->fixedPoint = raw;
     return ;
+}
+
+float Fixed::toFloat(void) const{
+    return ((float)this->fixedPoint / (1 << fracBits));
+}
+
+int Fixed::toInt(void) const{
+    return (this->fixedPoint >> fracBits);
+}
+
+std::ostream& operator<< (std::ostream &out, const Fixed &rhs){
+    out << rhs.toFloat();
+    return out;
 }
