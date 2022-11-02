@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 11:26:46 by mazhari           #+#    #+#             */
-/*   Updated: 2022/10/25 15:32:06 by mazhari          ###   ########.fr       */
+/*   Created: 2022/10/24 17:00:55 by mazhari           #+#    #+#             */
+/*   Updated: 2022/10/25 12:36:10 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie*	newZombie(std::string name){
-    Zombie*	zombie = new Zombie(name);
-    return (zombie);
-}
+class Harl
+{
+private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+public:
+    Harl();
+    ~Harl();
+    void complain(std::string level);
+};
+

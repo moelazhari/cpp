@@ -1,0 +1,94 @@
+{
+  "document": {
+    "id": "doc",
+    "name": "New Document",
+    "version": 15.5,
+    "pages": {
+      "page": {
+        "id": "page",
+        "name": "Page 1",
+        "childIndex": 1,
+        "shapes": {
+          "70fc3257-8a2f-47ab-3256-826b3ec5c72c": {
+            "id": "70fc3257-8a2f-47ab-3256-826b3ec5c72c",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              351.48,
+              100.1
+            ],
+            "rotation": 0,
+            "text": " ",
+            "style": {
+              "color": "white",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1.4001641152680098,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "57a7e25e-149d-4149-3121-5761d93d8af1": {
+            "id": "57a7e25e-149d-4149-3121-5761d93d8af1",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 2,
+            "point": [
+              174.35,
+              95.46
+            ],
+            "rotation": 0,
+            "text": " 42.42\n ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          }
+        },
+        "bindings": {}
+      },
+      "140b316a-3a78-49b3-0a0c-ed055c862f73": {
+        "id": "140b316a-3a78-49b3-0a0c-ed055c862f73",
+        "name": "Page 2",
+        "childIndex": 2,
+        "shapes": {},
+        "bindings": {}
+      }
+    },
+    "pageStates": {
+      "page": {
+        "id": "page",
+        "selectedIds": [],
+        "camera": {
+          "point": [
+            0,
+            0
+          ],
+          "zoom": 1
+        }
+      },
+      "140b316a-3a78-49b3-0a0c-ed055c862f73": {
+        "id": "140b316a-3a78-49b3-0a0c-ed055c862f73",
+        "selectedIds": [],
+        "camera": {
+          "point": [
+            -484.1666564941406,
+            -395
+          ],
+          "zoom": 1
+        }
+      }
+    },
+    "assets": {}
+  },
+  "assets": {}
+}

@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 11:36:19 by mazhari           #+#    #+#             */
-/*   Updated: 2022/10/22 12:43:38 by mazhari          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:21:31 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int main(){
 	std::cout << "The value of the string variable: " << str << std::endl;
 	std::cout << "The value pointed to by strPTR: "  << *strPtr << std::endl;
 	std::cout << "The value pointed to by strRef: " << strRef << std::endl;
-	
+
 	return (0);
 } 

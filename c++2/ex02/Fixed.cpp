@@ -57,3 +57,15 @@ std::ostream& operator<< (std::ostream &out, const Fixed &rhs){
     out << rhs.toFloat();
     return out;
 }
+
+bool Fixed::operator> (const Fixed &rhs) const{
+    return (this->fixedPoint > rhs.getRawBits());
+}
+
+bool Fixed::operator< (const Fixed &rhs) const{
+    return (this->fixedPoint < rhs.getRawBits());
+}
+
+bool Fixed::operator>= (const Fixed &rhs) const{
+    return (this->fixedPoint >= rhs.getRawBits());
+}
