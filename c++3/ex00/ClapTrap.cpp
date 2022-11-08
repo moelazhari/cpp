@@ -28,15 +28,34 @@ ClapTrap::~ClapTrap(void)
 
 void ClapTrap::attack(std::string const & target)
 {
+    if (this->hitPoints == 0 || this->energyPoints == 0)
+    {
+        std::cout << "ClapTrap " << this->name << " is dead" << std::endl;
+        return ;
+    }
     std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+    this->energyPoints--;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+    if ((this->hitPoints -= amount) <= 0)
+    {
+        std::cout << "ClapTrap " << this->name << " is dead" << std::endl;
+        this->hitPoints = 0;   
+        return ;
+    }
     std::cout << "ClapTrap " << this->name << " takes " << amount << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+    if (this->hitPoints == 0 || this->energyPoints == 0)
+    {
+        std::cout << "ClapTrap " << this->name << " is dead" << std::endl;
+        return ;
+    }
     std::cout << "ClapTrap " << this->name << " is repaired for " << amount << " points!" << std::endl;
+    this->hitPoints += amount;
+    this->energyPoints--;
 }
