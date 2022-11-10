@@ -6,18 +6,20 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:29:28 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/09 12:29:29 by mazhari          ###   ########.fr       */
+/*   Updated: 2022/11/09 13:28:56 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-    ClapTrap clap("mazhari");
+    FragTrap frag("mazhari");
 
-    clap.attack("l3rbi");
-    clap.takeDamage(8);
-    clap.beRepaired(5);
-    return 0;
+    frag.attack("l3rbi");
+    frag.takeDamage(8);
+    frag.beRepaired(5);
+    frag.highFivesGuys();
+
+    return (0);
 }

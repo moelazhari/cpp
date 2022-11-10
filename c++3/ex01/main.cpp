@@ -6,18 +6,19 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:29:28 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/09 12:29:29 by mazhari          ###   ########.fr       */
+/*   Updated: 2022/11/09 13:17:47 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap clap("mazhari");
+    ScavTrap scav("mazhari");
 
-    clap.attack("l3rbi");
-    clap.takeDamage(8);
-    clap.beRepaired(5);
-    return 0;
+    scav.attack("l3rbi");
+    scav.takeDamage(8);
+    scav.beRepaired(5);
+    scav.guardGate();
+    return (0);
 }

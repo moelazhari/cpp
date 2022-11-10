@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:29:28 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/09 12:29:29 by mazhari          ###   ########.fr       */
+/*   Created: 2022/11/09 12:35:07 by mazhari           #+#    #+#             */
+/*   Updated: 2022/11/09 13:24:36 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main(void)
-{
-    ClapTrap clap("mazhari");
+# include "ClapTrap.hpp"
 
-    clap.attack("l3rbi");
-    clap.takeDamage(8);
-    clap.beRepaired(5);
-    return 0;
-}
+class	FragTrap : public ClapTrap
+{	
+	
+	public:
+		FragTrap(std::string name);
+		~FragTrap(void);
+		
+		void attack(const std::string& target);
+		void highFivesGuys(void);
+};
+
+#endif
