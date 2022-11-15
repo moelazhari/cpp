@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 15:44:32 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/14 14:25:03 by mazhari          ###   ########.fr       */
+/*   Created: 2022/11/11 13:40:37 by mazhari           #+#    #+#             */
+/*   Updated: 2022/11/11 14:07:43 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
 #include <iostream>
 
-int main(int ac, char **av)
+class Animal
 {
-    if (ac == 1)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-    }
-    for (int i = 1; i < ac; i++)
-    {
-        for (size_t j = 0; j < strlen(av[i]); j++)
-            av[i][j] = toupper(av[i][j]);
-        std::cout << av[i];
-    }
-    std::cout << std::endl;
-    return (0);  
-}
+    protected:
+        std::string type;
+    public:
+        Animal(void);
+        Animal(std::string type);
+        Animal(const Animal &copy);
+        Animal &operator=(const Animal &rhs);
+        virtual ~Animal();
+        std::string     getType() const;
+        void            setType(std::string type);
+        virtual void    makeSound() const;
+};
+
+#endif

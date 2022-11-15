@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:29:28 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/09 12:29:29 by mazhari          ###   ########.fr       */
+/*   Updated: 2022/11/10 17:29:43 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int main(void)
     clap.attack("l3rbi");
     clap.takeDamage(8);
     clap.beRepaired(5);
+
     return 0;
 }

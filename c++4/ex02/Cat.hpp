@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:35:07 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/10 22:08:02 by mazhari          ###   ########.fr       */
+/*   Created: 2022/11/11 14:09:33 by mazhari           #+#    #+#             */
+/*   Updated: 2022/11/11 17:22:11 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include "ClapTrap.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class	ScavTrap : public ClapTrap
+class Cat : public Animal
 {
-	
-	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &copy);
-		ScavTrap& operator= (const ScavTrap &rhs);
-		~ScavTrap(void);
-
-		void attack(const std::string& target);
-		void guardGate(void);
+    private:
+        Brain *brain;
+    public:
+        Cat(void);
+        Cat(std::string type);
+        Cat(const Cat &copy);
+        Cat &operator=(const Cat &rhs);
+        ~Cat(void);
+        Brain *getBrain(void) const;
+        void   setBrain(Brain *brain);
+        void makeSound() const;
 };
 
 #endif

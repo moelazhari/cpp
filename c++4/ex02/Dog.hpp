@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:29:28 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/10 22:07:10 by mazhari          ###   ########.fr       */
+/*   Created: 2022/11/11 14:02:12 by mazhari           #+#    #+#             */
+/*   Updated: 2022/11/11 14:50:45 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main(void)
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Dog : public Animal
 {
-    ScavTrap scav("mazhari");
-    ScavTrap scav2(scav);
-    
-    scav2 = scav;
-    // scav.attack("l3rbi");
-    // scav.takeDamage(8);
-    // scav.beRepaired(5);
-    // scav.guardGate();
-    return (0);
-}
+    private:
+        Brain *brain;
+    public:
+        Dog(void);
+        Dog(std::string type);
+        Dog(const Dog &copy);
+        Dog &operator=(const Dog &rhs);
+        ~Dog();
+        Brain *getBrain(void) const;
+        void   setBrain(Brain *brain);
+        void    makeSound() const;
+};
+
+#endif

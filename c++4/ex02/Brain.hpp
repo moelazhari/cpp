@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brian.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:29:28 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/10 22:07:10 by mazhari          ###   ########.fr       */
+/*   Created: 2022/11/11 14:31:57 by mazhari           #+#    #+#             */
+/*   Updated: 2022/11/11 14:32:21 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main(void)
+#include <iostream>
+
+class Brain
 {
-    ScavTrap scav("mazhari");
-    ScavTrap scav2(scav);
-    
-    scav2 = scav;
-    // scav.attack("l3rbi");
-    // scav.takeDamage(8);
-    // scav.beRepaired(5);
-    // scav.guardGate();
-    return (0);
-}
+    private:
+        std::string ideas[100];
+    public:
+        Brain(void);
+        Brain(const Brain &copy);
+        Brain &operator=(const Brain &rhs);
+        ~Brain();
+};
+
+#endif

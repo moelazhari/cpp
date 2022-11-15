@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:29:28 by mazhari           #+#    #+#             */
-/*   Updated: 2022/11/10 22:07:10 by mazhari          ###   ########.fr       */
+/*   Created: 2022/11/11 14:09:33 by mazhari           #+#    #+#             */
+/*   Updated: 2022/11/11 14:09:56 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main(void)
+# include "Animal.hpp"
+
+class Cat : public Animal
 {
-    ScavTrap scav("mazhari");
-    ScavTrap scav2(scav);
-    
-    scav2 = scav;
-    // scav.attack("l3rbi");
-    // scav.takeDamage(8);
-    // scav.beRepaired(5);
-    // scav.guardGate();
-    return (0);
-}
+    public:
+        Cat(void);
+        Cat(std::string type);
+        Cat(const Cat &copy);
+        Cat &operator=(const Cat &rhs);
+        ~Cat();
+        void makeSound() const;
+};
+
+#endif
