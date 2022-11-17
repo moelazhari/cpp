@@ -6,13 +6,13 @@
 #    By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 15:32:34 by mazhari           #+#    #+#              #
-#    Updated: 2022/11/16 14:59:19 by mazhari          ###   ########.fr        #
+#    Updated: 2022/11/17 18:20:14 by mazhari          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=	c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-NAME =	conversion
+NAME =	serialization
 
 HEDEAR= Conversion.hpp
 

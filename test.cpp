@@ -1,25 +1,32 @@
 #include <iostream>
+#include <exception>
 using namespace std;
 
-class CDummy {
-    public:
-    float i,j;
-};
-
-class CAddition {
-  public:
-	int x,y;
-	CAddition (int a, int b) { x=a; y=b; }
-	int result() { return x+y;}
-};
+class CBase { virtual void dummy() {} };
+class CDerived: public CBase { int a; };
 
 int main () {
-  CDummy d;
-  CAddition * padd;
-  padd->x = 3;
-padd->y = 2;
-  padd = (CAddition*) &d;
-  cout << padd->result();
+  try {
+    CBase * pba = new CDerived;
+    CBase * pbb = new CBase;
+  
+    CBase &rba = *pba;
+    CBase &rbb = *pbb;
+    CDerived *pd;
+
+
+    pd = dynamic_cast<CDerived*>(pba);
+    if (pd==0) cout << "Null pointer on first type-cast" << endl;
+
+    pd = dynamic_cast<CDerived*>(pbb);
+    if (pd==0) cout << "Null pointer on second type-cast" << endl;
+
+    CDerived &rda = dynamic_cast<CDerived &>(rba);
+    cout << "refernce cast fain" << endl;
+    CDerived &rdb = dynamic_cast<CDerived &>(rbb);
+    cout << "refernce cast fain" << endl;
+
+
+  } catch (exception& e) {cout << "Exception: " << e.what();}
   return 0;
 }
-
