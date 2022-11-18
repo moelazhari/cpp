@@ -11,17 +11,29 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Conversion.hpp"
+#include <stdint.h>
 
-int main(){
+class Data{
+    public :
+        std::string name;
+};
 
-    Conversion *c = new Conversion;
-    
-    std::cout << c << std::endl;
-    
-    c = deserialize(serialize(c));
-    
-    std::cout << c << std::endl;
+uintptr_t    serialize( Data *data ) {
+    return reinterpret_cast< uintptr_t >(data);
+}
 
-    return (0); 
+Data*   deserialize(uintptr_t raw) {
+    return reinterpret_cast< Data* >(raw);
+}
+
+int main( void )
+{
+    Data *data = new Data;
+    data->name = "mazhari";
+
+    std::cout << "Name: " << data->name << std::endl;
+    std::cout << "Name: " << deserialize( serialize(data) )->name << std::endl;
+
+    delete data;
+    return (0);
 }

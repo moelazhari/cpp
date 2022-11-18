@@ -14,16 +14,14 @@ CC=	c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
 NAME =	serialization
 
-HEDEAR= Conversion.hpp
-
 B_DIR = build
 
-FILES = main Conversion
+FILES = main
 OBJS = $(addprefix $(B_DIR)/, $(FILES:=.o))
 
 all: $(NAME)
 
-$(B_DIR)/%.o : %.cpp $(HEDEAR)
+$(B_DIR)/%.o : %.cpp
 	mkdir -p $(@D)
 	$(CC) $(FLAGS) -c $< -o $@
 
